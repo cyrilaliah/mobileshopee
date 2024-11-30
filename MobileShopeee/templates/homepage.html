@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Shopee</title>
+  <link rel="stylesheet" href="/static/homepage.css">
+
+  <!-- Owl-carousel CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">Mobile<span>Shopee</span></div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="{{ url_for('login') }}" class="login-button">Log In</a></li>
+        <div class="cart">
+          <a href="/templates/cart.html" class="cart-button">
+            <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span> Items
+          </a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to Mobile Shopee</h1>
+    <p>Your one-stop shop for buying and selling cellphones!</p>
+    <a href="#products" class="cta-button">Shop Now</a>
+  </section>
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <h2>Featured Products</h2>
+    <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn" onclick="filterProducts('all')">All Brands</button>
+        <button class="filter-btn" onclick="filterProducts('samsung')">Samsung</button>
+        <button class="filter-btn" onclick="filterProducts('iphone')">iPhone</button>
+      </div>
+      <div class="product-grid">
+      <!-- Samsung Product -->
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/s20.jpg" alt="Samsung Galaxy S20">
+        <h3>Samsung Galaxy S20</h3>
+        <p>$799.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/fold.jpg" alt="Samsung Galaxy Z Fold">
+        <h3>Samsung Galaxy Z Fold</h3>
+        <p>$1,499.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/flip 5.jpg" alt="Samsung Galaxy Z Flip 5">
+        <h3>Samsung Galaxy Z Flip 5</h3>
+        <p>$1,399.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/flip 6.jpg" alt="Samsung Galaxy Flip 6">
+        <h3>Samsung Galaxy Z Flip 6</h3> 
+        <p>$1,999.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/s24ult.jpg" alt="Samsung S24 Ultra">
+        <h3>Samsung Galaxy S24 Ultra</h3>
+        <p>$2,000.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/champ.jpg" alt="Samsung Galaxy Champ">
+        <h3>Samsung Galaxy Champ</h3>
+        <p>$9.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="samsung">
+        <img src="/static/images/a16.jpg" alt="Samsung Galaxy A16">
+        <h3>Samsung Galaxy A16</h3>
+        <p>$99.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- iPhone Product -->
+      <div class="product" data-brand="iphone">
+        <img src="/static/images/15pm.jpg" alt="iPhone 15 Pro Max">
+        <h3>iPhone 15 Pro Max</h3>
+        <p>$1,999.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="iphone">
+        <img src="/static/images/15.jpg" alt="iPhone 15">
+        <h3>iPhone 15</h3>
+        <p>$1,000.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="iphone">
+        <img src="/static/images/ip12.jpg" alt="iPhone 12">
+        <h3>iPhone 12</h3>
+        <p>$99.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="iphone">
+        <img src="/static/images/11pm.jpg" alt="iPhone 11 Pro Max">
+        <h3>iPhone 11 Pro Max</h3>
+        <p>$399.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-brand="iphone">
+        <img src="/static/images/x.jpg" alt="iPhone X">
+        <h3>iPhone X</h3>
+        <p>$88.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>We would love to hear from you! Reach out to us with any questions, feedback, or inquiries.</p>
+  <div class="contact-details">
+    <div class="contact-item">
+      <h3>Email</h3>
+      <p><a href="mailto:mobileshopee@gmail.com">mobileshopee@gmail.com</a></p>
+    </div>
+    <div class="contact-item">
+      <h3>Phone</h3>
+      <p><a href="tel:049-559-5700">049-559-5700</a></p>
+    </div>
+    <div class="contact-item">
+      <h3>Address</h3>
+      <p>0808 Mobile Shopee<br>LSPU, Sta. Cruz</p>
+    </div>
+  </div>
+  <!-- Contact Form -->
+  <form class="contact-form">
+    <div class="form-group">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your message here" required></textarea>
+    </div>
+    <button type="submit" class="submit-button">Send Message</button>
+  </form>
+</section>
+
+
+  <footer class="footer">
+    <p>&copy; 2024 Mobile Shopee. All rights reserved.</p>
+  </footer>
+
+  <script src="/static/js/scripts.js"></script>
+</body>
+</html>

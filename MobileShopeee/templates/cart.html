@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Interface</title>
+  <link rel="stylesheet" href="/static/cart.css">
+
+   <!-- Owl-carousel CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+ 
+   <!-- font awesome icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Mobile<span>Shopee</span></div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ url_for('login') }}" class="login-button">Log In</a></li>
+            <div class="cart">
+              <a href="#cart" class="cart-button">
+                <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span> Items
+              </a>
+            </div>
+          </ul>
+        </nav>
+      </header>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <h1>Welcome to Mobile Shopee</h1>
+        <p>Your one-stop shop for buying and selling cellphones!</p>
+        <a href="/templates/homepage.html" class="cta-button">Shop Now</a>
+      </section>
+      <div class="cart-container">
+        <h1 class="cart-title">Your Shopping Cart</h1>
+        <div class="cart-items">
+          <!-- Example cart item -->
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <input type="checkbox" class="item-checkbox" data-price="299">
+              <img src="/static/images/16pm.jpg" alt="Phone 1" class="item-image">
+            </div>
+            <div class="cart-item-details">
+              <h3>Phone 1</h3>
+              <p class="item-price">$299</p>
+              <div class="quantity-control">
+                <label for="quantity1">Qty:</label>
+                <input type="number" class="item-quantity" id="quantity1" value="1" min="1" data-price="299">
+              </div>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <input type="checkbox" class="item-checkbox" data-price="399">
+              <img src="/static/images/15.jpg" alt="Phone 2" class="item-image">
+            </div>
+            <div class="cart-item-details">
+              <h3>Phone 2</h3>
+              <p class="item-price">$399</p>
+              <div class="quantity-control">
+                <label for="quantity2">Qty:</label>
+                <input type="number" class="item-quantity" id="quantity2" value="1" min="1" data-price="399">
+              </div>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <input type="checkbox" class="item-checkbox" data-price="499">
+              <img src="/static/images/flip 6.jpg" alt="Phone 3" class="item-image">
+            </div>
+            <div class="cart-item-details">
+              <h3>Phone 3</h3>
+              <p class="item-price">$499</p>
+              <div class="quantity-control">
+                <label for="quantity3">Qty:</label>
+                <input type="number" class="item-quantity" id="quantity3" value="1" min="1" data-price="499">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-summary">
+          <h2>Total: $<span id="total-amount">0</span></h2>
+          <button id="checkout-btn" class="checkout-button">Proceed to Checkout</button>
+        </div>
+      </div>
+      
+      
+  <!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>We would love to hear from you! Reach out to us with any questions, feedback, or inquiries.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p><a href="mailto:mobileshopee@gmail.com">mobileshopee@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <p><a href="tel:049-559-5700">049-559-5700</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Address</h3>
+        <p>0808 Mobile Shopee<br>LSPU, Sta. Cruz</p>
+      </div>
+    </div>
+    <!-- Contact Form -->
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message here" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </section>
+  
+  
+    <footer class="footer">
+      <p>&copy; 2024 Mobile Shopee. All rights reserved.</p>
+    </footer>
+  
+  <script src="/static/js/cart.js"></script>
+</body>
+</html>
